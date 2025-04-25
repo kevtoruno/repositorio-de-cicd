@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "frontend_artifacts" {
   bucket = var.S3FrontEnd
-  policy = data.aws_iam_policy_document.website_policy.json
+  #policy = data.aws_iam_policy_document.website_policy.json
   website {
     index_document = "index.html"
     error_document = "index.html"
@@ -14,6 +14,13 @@ resource "aws_s3_bucket_public_access_block" "frontend_public_access" {
   block_public_policy     = false
   ignore_public_acls      = false
   restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_policy" "frontend_policy" {
+  bucket = aws_s3_bucket.frontend_artifacts.id
+  policy = data.aws_iam_policy_document.website_policy.json
+
+  depends_on = [aws_s3_bucket_public_access_block.frontend_public_access]
 }
 
 data "aws_iam_policy_document" "website_policy" {
