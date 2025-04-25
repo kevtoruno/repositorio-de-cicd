@@ -44,7 +44,7 @@ resource "aws_codepipeline" "serverless_pipeline2" {
       output_artifacts = ["tf-code"]
       configuration = {
         FullRepositoryId     = "kevtoruno/serverless_node"
-        BranchName           = "master"
+        BranchName           = "main"
         ConnectionArn        = var.codestar_connector_credentials
         OutputArtifactFormat = "CODE_ZIP"
       }

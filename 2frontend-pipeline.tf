@@ -88,7 +88,7 @@ resource "aws_codepipeline" "frontend1_pipeline" {
       configuration = {
         FullRepositoryId     = "kevtoruno/angular2Sample"
         BranchName           = "main"
-        ConnectionArn        = "arn:aws:codeconnections:us-east-2:710271936972:connection/4af12317-027d-4c89-8881-d4d67897b1fa"
+        ConnectionArn        = var.codestar_connector_credentials
         OutputArtifactFormat = "CODE_ZIP"
       }
     }
