@@ -37,8 +37,8 @@ resource "aws_codepipeline" "serverless-pipeline-python" {
       version          = "1"
       output_artifacts = ["tf-code"]
       configuration = {
-        FullRepositoryId     = "culturadevops/serverless_python"
-        BranchName           = "master"
+        FullRepositoryId     = "kevtoruno/serverless_python"
+        BranchName           = "main"
         ConnectionArn        = var.codestar_connector_credentials
         OutputArtifactFormat = "CODE_ZIP"
       }
