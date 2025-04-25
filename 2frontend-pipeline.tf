@@ -1,6 +1,5 @@
 resource "aws_s3_bucket" "frontend_artifacts" {
   bucket = var.S3FrontEnd
-  acl    = "public-read"
   policy = data.aws_iam_policy_document.website_policy.json
   website {
     index_document = "index.html"
