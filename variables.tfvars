@@ -10,8 +10,8 @@ name_frontend= "frontend"
 
 name_serverless_node="serverless-node"
 
-name_serverless_python="serverless-python"
+#name_serverless_python="serverless-python"
 
-name_flyaway="mibdproduccion"
-dockerhub_credentials="arn:aws:secretsmanager:us-east-1:561607169148:secret:dockerhub-connection-3wewGf"
-name_micro="microservicio"
+#name_flyaway="mibdproduccion"
+#dockerhub_credentials="arn:aws:secretsmanager:us-east-1:561607169148:secret:dockerhub-connection-3wewGf"
+#name_micro="microservicio"
